@@ -3,28 +3,17 @@ import java.util.Scanner;
 
 public class BinaryStackDriver {
     public static void main(String[] args) {
+
         Scanner stdIn = new Scanner(System.in);
-        BinaryStack stack;
+        BinaryStack stack = new BinaryStack();
+
         try {
-            int decimalValue, temporaryDecimalValue, remainder, originalValue, sizeOfStack = 0;
+            int decimalValue, originalValue;
             System.out.print("Input Decimal Value: ");
             decimalValue = stdIn.nextInt();
-            temporaryDecimalValue = decimalValue;
             originalValue = decimalValue;
-
-            while (temporaryDecimalValue > 0) {
-                sizeOfStack++;
-                temporaryDecimalValue /= 2;
-            }
-
-            stack = new BinaryStack(sizeOfStack);
-
-            while (decimalValue > 0) {
-                remainder = (decimalValue % 2);
-                stack.push(remainder);
-                decimalValue /= 2;
-            }
-            System.out.println("Original Value: " + originalValue + "\nBinary Sequence: ");
+            stack.decimalToBinary(decimalValue);
+            System.out.println("\nDecimal Value: \n" + originalValue + "\n\nIt's Binary Sequence: ");
             stack.print();
         } catch (InputMismatchException exception) {
             System.out.println("Invalid data type.");
