@@ -19,5 +19,13 @@ public class BinaryStackDriver {
             System.out.println("Invalid data type.");
             System.exit(1);
         }
+
+        // TODO: Omit the use of the 'System.exit()' and replace it with a better alternative.
+        //  --
+        //  Possible Alternative:
+        //  1) Whenever the user inputs and invalid data type - return a message to the user and
+        //      have the program loop back to the origin statement.
+        //  2) If the user decides to want to exit the program, include the use of a sentinel value.
+        //      or any other user-generated input that can safely exit the program at any moment during its runtime.
     }
 }
